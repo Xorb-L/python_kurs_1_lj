@@ -77,10 +77,10 @@ class Library: # biblioteksklass
             print(item.display_info())
     
     def list_available_items(self): # metod för att visa tillgängliga objekt
-        borrowed_items = [i for u in self.users for i in u.borrowed_items]
-        available_items = [item for item in self.items if item not in borrowed_items]
+        borrowed_items = [i for u in self.users for i in u.borrowed_items] # samlarar alla lånade items i en lista
+        available_items = [item for item in self.items if item not in borrowed_items] # filtrerar bort lånade objekt
         for item in available_items:
-            print(item.display_info())
+            print(item.display_info()) # visar tillgängliga items
 
     def summary_of_borrowed_items(self): # metod för att visa sammanfattning av lånade objekt
         for user in self.users:
